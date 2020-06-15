@@ -88,8 +88,6 @@ public function followings($id)
     {
         // idの値でユーザを検索して取得
         $user = User::findOrFail($id);
-
-        
         // 関係するモデルの件数をロード
         $user->loadRelationshipCounts();
     

@@ -9,7 +9,6 @@
 
         <div class="collapse navbar-collapse" id="nav-bar">
             <ul class="navbar-nav mr-auto"></ul>
-            <ul class="navbar-nav">
                 <ul class="navbar-nav">
                 @if (Auth::check())
                     {{-- ユーザ一覧ページへのリンク --}}
@@ -20,7 +19,7 @@
                                 {{-- ユーザ詳細ページへのリンク --}}
                                 <li class="dropdown-item">{!! link_to_route('users.show', 'My profile', ['user' => Auth::id()]) !!}</li>
                                 {{-- お気に入りへのリンク --}}
-                                <li class="dropdown-item">{!! link_to_route('users.favorites', 'Favorites',  ['id' => $user->id]) !!}   
+                                <li class="dropdown-item">{!! link_to_route('users.favorites', 'Favorites',  ['id' => Auth::id()]) !!}</li> 
                                 <li class="dropdown-divider"></li>
                                 {{-- ログアウトへのリンク --}}
                                 <li class="dropdown-item">{!! link_to_route('logout.get', 'Logout') !!}</li>
